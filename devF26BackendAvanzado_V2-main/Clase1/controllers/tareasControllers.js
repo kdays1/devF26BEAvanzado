@@ -18,8 +18,8 @@ const createTareas = asyncHandler(async (req, res) => {
         user: req.user.id
     })
 
-    const tasks = await Task.find({ user: req.user.id})
-    res.status(200).json(tasks)
+    // const tasks = await Task.find({ user: req.user.id})
+    res.status(200).json(task)
 })
 
 const updateTareas = asyncHandler(async (req, res) => {
