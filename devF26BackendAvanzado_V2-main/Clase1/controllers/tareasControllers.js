@@ -51,7 +51,8 @@ const deleteTareas = asyncHandler(async (req, res) => {
         res.status(401)
         throw new Error('User not authorized')
     } else {
-        await Task.deleteOne(task)
+        // await Task.deleteOne(task)
+        const taskDeleted = await Task.findByIdAndDelete(req.params.id)
         res.status(200).json({ id : req.params.description})
     // const taskDeleted = await Task.findByIdAndDelete(req.params.id)
     }
