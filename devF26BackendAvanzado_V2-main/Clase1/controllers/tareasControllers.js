@@ -47,7 +47,7 @@ const deleteTareas = asyncHandler(async (req, res) => {
         throw new Error('That task does not exists')
     }
 
-    if(tareasModel.user.toString() !== req.user.id) {
+    if(task.user.toString() !== req.user.id) {
         res.status(401)
         throw new Error('User not authorized')
     } else {
